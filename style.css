@@ -1,0 +1,123 @@
+/* style.css - ฉบับสมบูรณ์ (Backend Dark Theme + Image Layout) */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-dark: #0f172a;       /* พื้นหลังสีน้ำเงินเข้ม */
+    --bg-card: #1e293b;       /* สีพื้นหลังกล่อง */
+    --text-main: #f1f5f9;     /* สีตัวหนังสือขาว */
+    --text-muted: #94a3b8;    /* สีตัวหนังสือเทาฟ้า */
+    --accent: #0ea5e9;        /* สีฟ้าสว่าง (Cyan) */
+    --accent-hover: #38bdf8;  /* สีฟ้าตอนชี้ */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Prompt', sans-serif; 
+    background-color: var(--bg-dark); 
+    color: var(--text-main); 
+    line-height: 1.6; 
+}
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { font-weight: 500; color: var(--text-muted); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+/* Layout Generally */
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+.page-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-main); border-left: 5px solid var(--accent); padding-left: 1rem; }
+
+/* --- ส่วนหน้าแรก (Home Layout) --- */
+.home-container {
+    display: flex;           /* จัดเรียงแนวนอน */
+    align-items: center;     /* กึ่งกลางแนวตั้ง */
+    justify-content: center; /* กึ่งกลางหน้าจอ */
+    gap: 4rem;               /* ระยะห่างรูปกับข้อความ */
+    min-height: 80vh;        /* ความสูงเต็มจอ */
+}
+
+/* รูปโปรไฟล์ */
+.profile-pic {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;       /* ตัดรูปให้พอดีวงกลม */
+    border-radius: 50%;      /* ทำเป็นวงกลม */
+    border: 4px solid var(--accent);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.25); /* เงาสีฟ้า */
+    transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+    transform: scale(1.05);  /* ขยายเล็กน้อยตอนชี้ */
+}
+
+/* ส่วนข้อความ */
+.text-section {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: #000;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid var(--accent);
+}
+.btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3); }
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent);
+}
+.btn-outline:hover {
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--accent-hover);
+}
+
+/* สไตล์เพิ่มเติมสำหรับหน้าอื่นๆ (Skills, Projects) */
+.skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; }
+.skill-box { background: var(--bg-card); padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid #334155; transition: 0.3s; }
+.skill-box:hover { border-color: var(--accent); transform: translateY(-5px); }
+.skill-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+
+.project-card { display: flex; background: var(--bg-card); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; border: 1px solid #334155; }
+.project-img { width: 300px; background: #000; object-fit: cover; }
+.project-content { padding: 2rem; flex: 1; }
+.tech-tag { display: inline-block; background: rgba(14, 165, 233, 0.15); color: var(--accent); padding: 0.2rem 0.8rem; border-radius: 50px; font-size: 0.8rem; margin-right: 0.5rem; margin-top: 1rem; }
+
+/* Responsive (มือถือ) */
+@media (max-width: 850px) {
+    .home-container {
+        flex-direction: column; /* เปลี่ยนเป็นแนวตั้ง */
+        text-align: center;
+        gap: 2rem;
+        padding-top: 3rem;
+    }
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+    }
+    .text-section div {
+        justify-content: center; /* จัดปุ่มให้อยู่ตรงกลาง */
+    }
+    .nav-links { display: none; } /* ซ่อนเมนูในมือถือ (แบบง่าย) หรือจะปรับให้เล็กลงก็ได้ */
+    .project-card { flex-direction: column; }
+    .project-img { width: 100%; height: 200px; }
+}

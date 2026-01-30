@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.5rem; }
+        .skill-box { background: var(--bg-card); padding: 2rem; border-radius: 8px; text-align: center; border: 1px solid #334155; transition: 0.3s; }
+        .skill-box:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .skill-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo" style="font-size: 1.2rem;"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="about.html">เกี่ยวกับผม</a></li>
+            <li><a href="skills.html" class="active">ทักษะ</a></li>
+            <li><a href="projects.html">ผลงาน</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Technical Skills</h1>
+        
+        <h3 style="margin-bottom: 1.5rem; color: var(--text-muted);">Core Stack</h3>
+        <div class="skill-grid">
+            <div class="skill-box"><i class="fab fa-php skill-icon"></i><br>PHP</div>
+            <div class="skill-box"><i class="fas fa-database skill-icon"></i><br>MySQL</div>
+            <div class="skill-box"><i class="fab fa-python skill-icon"></i><br>Python</div> <div class="skill-box"><i class="fab fa-react skill-icon"></i><br>JSX (React)</div>
+            <div class="skill-box"><i class="fab fa-html5 skill-icon"></i><br>HTML5</div>
+        </div>
+
+        <h3 style="margin: 3rem 0 1.5rem 0; color: var(--text-muted);">Tools & Version Control</h3>
+        <div class="skill-grid">
+            <div class="skill-box"><i class="fab fa-git-alt skill-icon"></i><br>Git</div>
+            <div class="skill-box"><i class="fab fa-github skill-icon"></i><br>GitHub</div>
+            <div class="skill-box"><i class="fas fa-server skill-icon"></i><br>XAMPP</div> <div class="skill-box"><i class="fas fa-paper-plane skill-icon"></i><br>Postman</div> <div class="skill-box"><i class="fas fa-code skill-icon"></i><br>VS Code</div>
+        </div>
+    </div>
+</body>
+</html>

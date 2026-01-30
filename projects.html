@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ปรับแต่งกล่องโปรเจกต์ */
+        .project-card { 
+            display: flex; 
+            background: var(--bg-card); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            margin-bottom: 2rem; 
+            border: 1px solid #334155; 
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        /* ส่วนแสดงโลโก้ (แทนรูปภาพ) */
+        .project-logo-box { 
+            width: 300px; 
+            min-height: 250px; 
+            background: #111827; /* สีพื้นหลังเข้มๆ ตัดกับโลโก้ */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem; /* ขนาดไอคอนใหญ่สะใจ */
+        }
+
+        .project-content { padding: 2rem; flex: 1; }
+        
+        .tech-tag { 
+            display: inline-block; 
+            background: rgba(14, 165, 233, 0.15); 
+            color: var(--accent); 
+            padding: 0.2rem 0.8rem; 
+            border-radius: 50px; 
+            font-size: 0.8rem; 
+            margin-right: 0.5rem; 
+            margin-top: 1rem; 
+        }
+
+        /* Responsive สำหรับมือถือ */
+        @media (max-width: 850px) { 
+            .project-card { flex-direction: column; } 
+            .project-logo-box { width: 100%; height: 200px; font-size: 6rem; } 
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo" style="font-size: 1.2rem;">Teerapat.C</div>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="about.html">เกี่ยวกับผม</a></li>
+            <li><a href="skills.html">ทักษะ</a></li>
+            <li><a href="projects.html" class="active">ผลงาน</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Featured Projects</h1>
+
+        <div class="project-card">
+            <div class="project-logo-box" style="color: #777BB4;"> <i class="fab fa-php"></i>
+            </div>
+            
+            <div class="project-content">
+                <h3>Basic CRUD System</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                    ระบบจัดการฐานข้อมูลพื้นฐาน (Create, Read, Update, Delete) พัฒนาเพื่อทำความเข้าใจ Flow การทำงานของข้อมูลระหว่าง Server และ Database
+                </p>
+                <div>
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">MySQL</span>
+                </div>
+                <a href="https://github.com/TeerapatChuatong/crud_one" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-logo-box" style="color: #61DAFB;"> <i class="fab fa-react"></i>
+            </div>
+            
+            <div class="project-content">
+                <h3>Admin Dashboard</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                    หน้าจอแผงควบคุมสำหรับผู้ดูแลระบบ ออกแบบโครงสร้างเพื่อรองรับการแสดงผลข้อมูลแบบ Real-time และการจัดการ Users
+                </p>
+                <div>
+                    <span class="tech-tag">JSX</span>
+                    <span class="tech-tag">Dashboard Logic</span>
+                </div>
+                <a href="https://github.com/TeerapatChuatong/admin_dashboard" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-logo-box" style="color: #FFD43B;"> <i class="fab fa-python"></i>
+            </div>
+            
+            <div class="project-content">
+                <h3>Face Recognition Login</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                    ระบบยืนยันตัวตนด้วยใบหน้า บูรณาการร่วมกับ Python Script เพื่อตรวจสอบความถูกต้องทางชีวภาพ (Biometric) เพิ่มความปลอดภัยให้ระบบ Login
+                </p>
+                <div>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Security API</span>
+                </div>
+                <a href="https://github.com/TeerapatChuatong/face-recognition-login" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
